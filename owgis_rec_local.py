@@ -9,6 +9,8 @@ import time
 import os
 import sys
 import datetime
+from pyvirtualdisplay import Display
+#from selenium.webdriver.firefox.options import Options
 
 usage='''
 owgis_rec2 url menu1 menu2 ofile pos
@@ -39,6 +41,7 @@ example:
 '''
 
 print(sys.argv)
+video_tsize=60
 #getting parameters
 if len(sys.argv)!=6:
     print(usage)
@@ -48,13 +51,26 @@ menu1=sys.argv[2]
 menu2=sys.argv[3]
 ofile=sys.argv[4]
 pos=sys.argv[5]
+
+display=Display(visible=0,size=(2560,1440))
+display.start()
+print('start display:', display.backend,display.screen,os.environ['DISPLAY'])
 print('Open browser')
-browser = webdriver.Firefox()
-print('move to second screen')
-browser.set_window_position(1920,0)
+#options = webdriver.firefox.options.Options()
+#options.add_argument("--kiosk")
+
+options = webdriver.chrome.options.Options()
+#options.add_argument("--kiosk");
+options.add_argument("--disable-infobars")
+#browser = webdriver.Firefox()
+browser = webdriver.Chrome(chrome_options=options)
+#print('move to second screen')
+#browser.set_window_position(0,0)
+#browser.find_element_by_xpath('/html/body').send_keys(Keys.F11)
+browser.set_window_size(2560,1440)
 print('fullscreen ON')
 browser.fullscreen_window()
-print('open page')
+print('open page',url)
 browser.get(url)
 time.sleep(5)
 #browser.execute_script("animatePositionMap(0, [-100,0]);")
@@ -79,7 +95,7 @@ time.sleep(3)
 
 if pos!='None':
     print('zoom')
-    browser.execute_script("animatePositionMap("+pos+");")
+    browser.execute_script("animatePositionMap("+pos+', 0, "EPSG:4326");')
     time.sleep(2)
 
 print('minimize menus')
@@ -126,9 +142,11 @@ browser.execute_script("updateAnimationStatus('playing');")
 print('recording...',end=' ')
 tempfile=ofile.rsplit('/',1)[0]+'/tempfile.mp4'
 print(tempfile)
-os.system('ffmpeg  -y -video_size 2560x1440 -framerate 30 -f x11grab -i :0.0+1920,0 -c:v libx264 -pix_fmt yuv420p -crf 0 -preset ultrafast '+tempfile+' &')
+os.system('ffmpeg  -y -video_size 2560x1440 -framerate 30 -f x11grab -i '+\
+        os.environ['DISPLAY']+'.0+0,0 -c:v libx264 -pix_fmt yuv420p -crf 0 -preset ultrafast '+\
+        tempfile+' &')
 #time.sleep(60)
-time.sleep(60)
+time.sleep(video_tsize)
 os.system('pkill ffmpeg')
 print('Stop animation')
 print('*'*50)
@@ -138,5 +156,6 @@ stop.click()
 browser.quit()
 print('encoding...')
 os.system('ffmpeg -y -i '+tempfile+' -c:v libx264 -pix_fmt yuv420p -vf scale=1920:1080 '+ofile)
+display.stop()
 print('Bye')
 
