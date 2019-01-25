@@ -1,9 +1,7 @@
 #
 # coding: utf-8
 
-#added parameter input
 from selenium import webdriver
-#from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time 
@@ -36,6 +34,7 @@ examples:
     video.mp4
 '''
 
+video_tsize=60
 #getting parameters
 if len(sys.argv)!=5:
     print(usage)
@@ -44,16 +43,11 @@ url=sys.argv[1]
 menu1=sys.argv[2]
 menu2=sys.argv[3]
 ofile=sys.argv[4]
-#firefox_capabilities = DesiredCapabilities.FIREFOX
-#firefox_capabilities['marionette'] = True
-#firefox_capabilities['binary'] = '/usr/bin/firefox'
 print('Open browser')
-
 browser = webdriver.Firefox()
-print('move to second screen')
-browser.set_window_position(1920,0)
-print('fullscreen ON')
-browser.fullscreen_window()
+#browser.set_window_position(1920,0)
+#print('fullscreen ON')
+#browser.fullscreen_window()
 print('open page')
 browser.get(url)
 time.sleep(6)

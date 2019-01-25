@@ -1,8 +1,8 @@
 date
 cd /home/miguel/test_selenium
-python3 owgis_rec_global.py http://pronosticos.unam.mx:8080/global GFS Wind ~/owgis_videos/globalW.mp4
+python3 owgis_rec_local.py http://pronosticos.unam.mx:8080/global GFS Wind ~/owgis_videos/globalW.mp4 "0.1,[-100,0]"
 sleep 2
-python3 owgis_rec_global.py http://pronosticos.unam.mx:8080/global GFS Temperature ~/owgis_videos/globalT.mp4
+python3 owgis_rec_local.py http://pronosticos.unam.mx:8080/global GFS Temperature ~/owgis_videos/globalT.mp4 "0.1,[-100,0]"
 sleep 2
 #python3 owgis_rec_global.py http://pronosticos.unam.mx:8080/global HYCOM Temperature ~/owgis_videos/HYCOMT.mp4
 #sleep 2

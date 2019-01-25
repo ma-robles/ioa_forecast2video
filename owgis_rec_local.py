@@ -41,7 +41,8 @@ example:
 '''
 
 print(sys.argv)
-video_tsize=60
+#video_tsize=60
+video_tsize=6
 #getting parameters
 if len(sys.argv)!=6:
     print(usage)
@@ -62,19 +63,22 @@ print('Open browser')
 options = webdriver.chrome.options.Options()
 #options.add_argument("--kiosk");
 options.add_argument("--disable-infobars")
-#browser = webdriver.Firefox()
-browser = webdriver.Chrome(chrome_options=options)
+options.add_argument('--headless' )
+options.add_argument('--no-sandbox' )
+options.add_argument('--disable-dev-shm-usage')
+capabilities ={'chromeOptions':{ 'useAutomationExtension':False}}
+browser = webdriver.Firefox()
+#browser = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities)
 #print('move to second screen')
 #browser.set_window_position(0,0)
-#browser.find_element_by_xpath('/html/body').send_keys(Keys.F11)
 browser.set_window_size(2560,1440)
 print('fullscreen ON')
-browser.fullscreen_window()
+#browser.fullscreen_window()
 print('open page',url)
 browser.get(url)
 time.sleep(5)
 #browser.execute_script("animatePositionMap(0, [-100,0]);")
-time.sleep(1)
+#time.sleep(1)
 #option menu
 print('select')
 menu_sel1=Select(browser.find_element_by_id('dropDownLevels1'))
