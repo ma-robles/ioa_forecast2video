@@ -1,0 +1,14 @@
+#alertas
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_T2_alerta/ al_T2_d1.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_T2_M_alerta/d1_alerta_max_T2_M_000.jpg al_T2M_d1.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_T2_alerta/ al_T2_d2.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_T2_M_alerta/d2_alerta_max_T2_M_000.jpg al_T2M_d2.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_VIENTO_alerta/ al_vi_d1.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_VIENTO_M_alerta/d1_alerta_max_VIENTO_M_000.jpg al_viM_d1.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_VIENTO_alerta/ al_vi_d2.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_VIENTO_M_alerta/d2_alerta_max_VIENTO_M_000.jpg al_viM_d2.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_PREC_alerta/ al_pre_d1.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_PREC_M_alerta/d1_alerta_max_PREC_M_000.jpg al_preM_d1.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_PREC_M_alerta/d2_alerta_max_PREC_M_000.jpg al_preM_d2.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_PREC_alerta/ al_pre_d2.mp4
+

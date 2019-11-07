@@ -1,0 +1,41 @@
+#domino 1
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_viento_prnm_s/ d1_viento_prnm_s.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_temp_prnm/ d1_temp_prnm.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_pcpcn_acum_3hrs/ d1_pcpcn_acum_3hrs.mp4
+
+#domino 2
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_viento_prnm_s/ d2_viento_prnm_s.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_temp_prnm/ d2_temp_prnm.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d2_pcpcn_acum_3hrs/ d2_pcpcn_acum_3hrs.mp4
+
+#meteogramas
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Ciudad_Universitaria_UNAM_CDMX.jpg meteo_UNAM.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_CDMX.jpg meteo_CDMX.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Acapulco_Gro.jpg meteo_acapulco.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Merida_Yuc.jpg meteo_merida.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Mexicali_BC.jpg meteo_mexicali.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Veracruz_Ver.jpg meteo_vcruz.mp4
+
+
+#oleaje
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WWIII/actuales/gom_120h_altura/ gom_120h_altura.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WWIII/actuales/pom_120h_altura/ pom_120h_altura.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WWIII/actuales/wo_120h_altura/ wo_120h_altura.mp4
+
+#marea de tormenta
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/ADCIRC/actuales/marea_gom/ marea_gom.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/ADCIRC/actuales/marea_pom/ marea_pom.mp4
+
+#calidad del aire
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF-CHEM/actuales/CdMexico/PM10/ pm10.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF-CHEM/actuales/CdMexico/CO/ CO.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF-CHEM/actuales/CdMexico/Ozono/ O3.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF-CHEM/actuales/CdMexico/NOX/ NOX.mp4
+
+# ceniza
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/FALL3D/actuales/20190205/Hora_01/Altura_03/C_FL100/ cen_3k_100.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/FALL3D/actuales/20190205/Hora_01/Altura_03/C_FL150/ cen_3k_150.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/FALL3D/actuales/20190205/Hora_01/Altura_03/C_FL200/ cen_3k_200.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/FALL3D/actuales/20190205/Hora_01/Altura_03/C_FL250/ cen_3k_250.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/FALL3D/actuales/20190205/Hora_01/Altura_03/C_FL300/ cen_3k_300.mp4
+#http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/FALL3D/actuales/20190205/Hora_01/Altura_03/C_FL350/ cen_3k_350.mp4

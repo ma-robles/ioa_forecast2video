@@ -41,8 +41,8 @@ example:
 '''
 
 print(sys.argv)
-#video_tsize=60
-video_tsize=6
+video_tsize=60
+#video_tsize=6
 #getting parameters
 if len(sys.argv)!=6:
     print(usage)
@@ -68,6 +68,7 @@ options.add_argument('--no-sandbox' )
 options.add_argument('--disable-dev-shm-usage')
 capabilities ={'chromeOptions':{ 'useAutomationExtension':False}}
 browser = webdriver.Firefox()
+#browser = webdriver.Opera()
 #browser = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities)
 #print('move to second screen')
 #browser.set_window_position(0,0)

@@ -1,0 +1,8 @@
+#meteogramas
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Ciudad_Universitaria_UNAM_CDMX.jpg meteo_UNAM.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_CDMX.jpg meteo_CDMX.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Acapulco_Gro.jpg meteo_acapulco.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Merida_Yuc.jpg meteo_merida.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Mexicali_BC.jpg meteo_mexicali.mp4
+http://grupo-ioa.atmosfera.unam.mx/pronosticos/productos/WRF/actuales/d1_meteo/d1_meteo_Veracruz_Ver.jpg meteo_vcruz.mp4
+
