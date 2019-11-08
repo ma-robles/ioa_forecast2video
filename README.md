@@ -56,7 +56,12 @@ El archivo contiene una lista separada por comas en el que para cada línea se e
 La carpeta de salida indica la carpeta donde se generarán los videos.
 
 ####join_banner.sh
-No requiere argumentos
+Agrega información a los videos
+
+join_banner.sh folder_videos folder_info
+folder_videos es la carpeta donde se encuentran los videos
+folder_info carpeta donde se encuentran las imágenes a agregar
+
 
 ####Otros archivos
 * *base_list.txt*. Es un archivo de ejemplo que crea diferentes videos, sirve como base a la cual se le puede agregar rutas de ceniza mediante *path_creator.py*.

@@ -95,7 +95,6 @@ with open(filename,'r') as sfile:
                 newurl=path+'/'+today+'/'+nfile
                 getfile(newurl,img_folder)
                 convert_file(img_folder, url.split('/')[-1],ofilename)
-            copy_ssh(img_folder+'/'+ofilename)
         except:
             print('error',sys.exc_info())
             continue
