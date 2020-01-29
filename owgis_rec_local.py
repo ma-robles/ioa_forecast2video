@@ -44,7 +44,7 @@ print(sys.argv)
 video_tsize=60
 #video_tsize=6
 #getting parameters
-if len(sys.argv)!=6:
+if len(sys.argv)<6:
     print(usage)
     exit(0)
 url=sys.argv[1]
@@ -52,10 +52,15 @@ menu1=sys.argv[2]
 menu2=sys.argv[3]
 ofile=sys.argv[4]
 pos=sys.argv[5]
+headless=True
+if len(sys.argv)>6:
+    if sys.argv[6]=='False':
+        headless=False
 
-display=Display(visible=0,size=(2560,1440))
-display.start()
-print('start display:', display.backend,display.screen,os.environ['DISPLAY'])
+if headless==True:
+    display=Display(visible=0,size=(2560,1440))
+    display.start()
+    print('start display:', display.backend,display.screen,os.environ['DISPLAY'])
 print('Open browser')
 #options = webdriver.firefox.options.Options()
 #options.add_argument("--kiosk")
@@ -161,6 +166,7 @@ stop.click()
 browser.quit()
 print('encoding...')
 os.system('ffmpeg -y -i '+tempfile+' -c:v libx264 -pix_fmt yuv420p -vf scale=1920:1080 '+ofile)
-display.stop()
+if headless==True:
+    display.stop()
 print('Bye')
 

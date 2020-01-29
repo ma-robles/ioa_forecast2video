@@ -20,5 +20,7 @@ scp -i ~/.ssh/id_rsa  ~/videos_forecast/d2_temp_prnm.mp4 pi@10.20.5.148:~/anima/
 scp -i ~/.ssh/id_rsa  ~/videos_forecast/d1_viento_prnm_s.mp4 pi@10.20.5.147:~/anima/
 scp -i ~/.ssh/id_rsa  ~/videos_forecast/d2_viento_prnm_s.mp4 pi@10.20.5.148:~/anima/
 
+./owgis_all.sh
+./copy_owgis.sh
 ./shutdown_all.sh
 date
