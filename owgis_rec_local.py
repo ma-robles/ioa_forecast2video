@@ -58,7 +58,7 @@ if len(sys.argv)>6:
         headless=False
 
 if headless==True:
-    display=Display(visible=0,size=(2560,1440))
+    display=Display(visible=0,size=(2560,1440), color_depth=16)
     display.start()
     print('start display:', display.backend,display.screen,os.environ['DISPLAY'])
 print('Open browser')
