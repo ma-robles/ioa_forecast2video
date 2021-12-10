@@ -23,7 +23,7 @@ En conjunto permiten la navegación web automatizada.
 ### Xvfb y pyVirtualDisplay
 pyVirtualDisplay es una biblioteca de python que permite usar el paquete xvfb.
 En conjunto permiten crear una pantalla virtual para los scripts en python3 donde se desplegará la navegación web.
-#### Instalación con Conda
+#### Instalación
 * conda install -c conda-forge pyvirtualdisplay 
 * Xvfb (xorg-server-xvfb) se puede instalar por medio del administrador de paquetes del sistema.
 
