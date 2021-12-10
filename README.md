@@ -12,17 +12,20 @@ Conjunto de scripts en Python y Bash shell que transforma las imágenes y págin
   
 
 ### Selenium y geckodriver:
+Selenium (client) es una biblioteca de python que permite controlar el navegador web.
+geckodriver es un ejecutable que permite enlazar selenium con el navegador Firefox. 
 En conjunto permiten la navegación web automatizada.
 #### Instalación
   1. Instalar *Selenium client* para python. La opción mas sencilla es usando Conda: * conda install -c conda-forge selenium *. Métodos adicionales se pueden encontrar en https://www.seleniumhq.org/download/
   2. Descargar e instalar *geckodriver* (web driver para mozilla), desde https://github.com/mozilla/geckodriver/releases
-  * La instalación consiste en copiar geckodriver al path (/usr/local/bin,/usr/bin, ~/bin,etc).
+  * La instalación consiste en descomprimir y copiar geckodriver a alguna de las carpetas del path (/usr/local/bin,/usr/bin, ~/bin,etc).
   * Verificar compatibilidad de versiones geckodriver con selenium (actualmente geckodriver 0.23.0 ,selenium 3.141.0)
 ### Xvfb y pyVirtualDisplay
+pyVirtualDisplay es una biblioteca de python que permite usar el paquete xvfb.
 En conjunto permiten crear una pantalla virtual para los scripts en python3 donde se desplegará la navegación web.
 #### Instalación con Conda
 * conda install -c conda-forge pyvirtualdisplay 
-* Xvfb se puede instalar por medio del administrador de paquetes del sistema.
+* Xvfb (xorg-server-xvfb) se puede instalar por medio del administrador de paquetes del sistema.
 
 ### FFMPEG e Imagemagic
 Permiten el manejo y edición de videos e imágenes respectivamente
