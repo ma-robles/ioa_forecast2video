@@ -2,7 +2,7 @@ date
 pwd
 python -VV
 python forecast2video.py base_list.txt ../videos_forecast
-./join_banner.sh ../videos_forecast/ ../banner
+./join_banner.sh ../videos_forecast/ ./banner
 scp ../videos_forecast/join*.mp4 rpi1:~/anima/
 scp ../videos_forecast/join*.mp4 rpi2:~/anima/
 scp ../videos_forecast/join*.mp4 rpi3:~/anima/
