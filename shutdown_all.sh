@@ -1,7 +1,7 @@
-ssh -t pi@10.20.5.53 "sudo reboot"
-ssh -t pi@10.20.5.51 "sudo reboot"
-ssh -t pi@10.20.5.46 "sudo reboot"
-ssh -t pi@10.20.5.101 "sudo reboot"
-ssh -t pi@10.20.5.147 "sudo reboot"
-ssh -t pi@10.20.5.148 "sudo reboot"
+ssh -t rpi1 "sudo reboot"
+ssh -t rpi2 "sudo reboot"
+ssh -t rpi3 "sudo reboot"
+ssh -t rpi4 "sudo reboot"
+ssh -t rpi5 "sudo reboot"
+ssh -t rpi6 "sudo reboot"
 
