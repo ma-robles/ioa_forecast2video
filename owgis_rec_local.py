@@ -138,7 +138,7 @@ def get_percent(perc_str):
         
 time.sleep(5)
 print('load:',get_percent(load.text))
-for i in range(90):
+for i in range(150):
     time.sleep(2)
     pc_val=get_percent(load.text)
     print('Iter:',i,end=' ')
