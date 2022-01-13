@@ -58,115 +58,124 @@ if len(sys.argv)>6:
         headless=False
 
 if headless==True:
-    display=Display(visible=0,size=(2560,1440), color_depth=16)
-    display.start()
+    vis=0
+else:
+    vis=True
+with Display(visible=vis, size=(2560,1440), ) as display:
     print('start display:', display,os.environ['DISPLAY'])
-print('Open browser')
-#options = webdriver.firefox.options.Options()
-#options.add_argument("--kiosk")
+    print('Open browser')
+    #options = webdriver.firefox.options.Options()
+    #options.add_argument("--kiosk")
 
-options = webdriver.chrome.options.Options()
-#options.add_argument("--kiosk");
-options.add_argument("--disable-infobars")
-options.add_argument('--headless' )
-options.add_argument('--no-sandbox' )
-options.add_argument('--disable-dev-shm-usage')
-capabilities ={'chromeOptions':{ 'useAutomationExtension':False}}
-browser = webdriver.Firefox()
-#browser = webdriver.Opera()
-#browser = webdriver.Chrome(chrome_options=options, desired_capabilities=capabilities)
-#print('move to second screen')
-#browser.set_window_position(0,0)
-browser.set_window_size(2560,1440)
-print('fullscreen ON')
-browser.fullscreen_window()
-print('open page',url)
-browser.get(url)
-time.sleep(5)
-#browser.execute_script("animatePositionMap(0, [-100,0]);")
-#time.sleep(1)
-#option menu
-print('select')
-menu_sel1=Select(browser.find_element_by_id('dropDownLevels1'))
-menu_sel1.select_by_visible_text(menu1)
-time.sleep(3)
-menu_sel2=Select(browser.find_element_by_id('dropDownLevels2'))
-menu_sel2.select_by_visible_text(menu2)
-time.sleep(3)
-#select date
-#print('select days')
-#init_date=browser.find_element_by_id('cal-start')
-#init_date=init_date.find_element_by_link_text('16')
-#end_date=browser.find_element_by_id('cal-end')
-#end_date=end_date.find_element_by_link_text('19')
-#init_date.click()
-#time.sleep(1)
-#end_date.click()
-
-if pos!='None':
-    print('zoom')
-    browser.execute_script("animatePositionMap("+pos+', 0, "EPSG:4326");')
-    time.sleep(2)
-
-print('minimize menus')
-browser.execute_script("owgis.layouts.draggable.minimizeWindow('optionalsMinimize', 'optionalMenuParent')")
-browser.execute_script("owgis.layouts.draggable.minimizeWindow('mainMenuMinimize', 'mainMenuParent')")
-time.sleep(1)
-print('select low')
-a_res = browser.find_elements_by_xpath("//input[@name='video_res' and @value='low']")
-a_res[0].click()
-time.sleep(3)
-
-
-browser.execute_script( "owgis.ncwms.animation.dispAnimation();")
-print('Running animation')
-print('*'*50)
-#anima = browser.find_element_by_id('p-animation')
-#anima.click()
-browser.execute_script( "owgis.ncwms.animation.dispAnimation();")
-
-load=browser.find_element_by_id('loadperc')
-def get_percent(perc_str):
-    for perc in perc_str.split():
+    browser = webdriver.Firefox()
+    #browser.set_window_position(0,0)
+    browser.set_window_size(2560,1440)
+    print('fullscreen ON')
+    browser.fullscreen_window()
+    for retry in range(3):
         try:
-            val=int(perc)
-            return val
-        except:
-            pass
-    return 100
+            print('opening:',url)
+            browser.get(url)
+            time.sleep(3)
+            #option menu
+            print('select')
+            menu_sel1=Select(browser.find_element_by_id('dropDownLevels1'))
+            menu_sel1.select_by_visible_text(menu1)
+            time.sleep(3)
+            menu_sel2=Select(browser.find_element_by_id('dropDownLevels2'))
+            menu_sel2.select_by_visible_text(menu2)
+            time.sleep(3)
+            #select date
+            #print('select days')
+            #init_date=browser.find_element_by_id('cal-start')
+            #init_date=init_date.find_element_by_link_text('16')
+            #end_date=browser.find_element_by_id('cal-end')
+            #end_date=end_date.find_element_by_link_text('19')
+            #init_date.click()
+            #time.sleep(1)
+            #end_date.click()
 
-        
-time.sleep(5)
-print('load:',get_percent(load.text))
-for i in range(150):
-    time.sleep(2)
-    pc_val=get_percent(load.text)
-    print('Iter:',i,end=' ')
-    print('load:',pc_val, end='\r')
-    if pc_val==100:
-        break
-print('Rewind')
-browser.execute_script( "updateAnimationStatus('paused');")
-browser.execute_script( "animFirstFrame();")
-browser.execute_script("updateAnimationStatus('playing');")
-print('recording...',end=' ')
-tempfile=ofile.rsplit('/',1)[0]+'/tempfile.mp4'
-print(tempfile)
-os.system('ffmpeg  -y -video_size 2560x1440 -framerate 30 -f x11grab -i '+\
-        os.environ['DISPLAY']+'.0+0,0 -c:v libx264 -pix_fmt yuv420p -crf 0 -preset ultrafast '+\
-        tempfile+' &')
-#time.sleep(60)
-time.sleep(video_tsize)
-os.system('pkill ffmpeg')
-print('Stop animation')
-print('*'*50)
-time.sleep(1)
-stop = browser.find_element_by_class_name('warning')
-stop.click()
-browser.quit()
+            if pos!='None':
+                print('zoom')
+                browser.execute_script("animatePositionMap("+pos+', 0, "EPSG:4326");')
+                time.sleep(2)
+
+            print('minimize menus')
+            browser.execute_script("owgis.layouts.draggable.minimizeWindow('optionalsMinimize', 'optionalMenuParent')")
+            browser.execute_script("owgis.layouts.draggable.minimizeWindow('mainMenuMinimize', 'mainMenuParent')")
+            time.sleep(1)
+            print('select resolution')
+            #value = high | normal | low
+            a_res = browser.find_elements_by_xpath("//input[@name='video_res' and @value='normal']")
+            a_res[0].click()
+            time.sleep(3)
+
+            print('Running animation')
+            print('*'*50)
+            #anima = browser.find_element_by_id('p-animation')
+            #anima.click()
+            browser.execute_script("owgis.ncwms.animation.dispAnimation();")
+            break
+        except:
+            print('error loading page, retry')
+            time.sleep(4)
+    time.sleep(4)
+
+
+    load=browser.find_element_by_id('loadperc')
+    def get_percent(perc_str):
+        for perc in perc_str.split():
+            try:
+                val=int(perc)
+                return val
+            except:
+                pass
+        return 100
+
+            
+    for retry in range(2):
+        print("try number:", retry)
+        browser.execute_script("updateAnimationStatus('none')")
+        time.sleep(1)
+        browser.execute_script("owgis.ncwms.animation.dispAnimation();")
+        time.sleep(5)
+        print('load:',get_percent(load.text))
+        pc_val_tmp=0
+        i=0
+        while i < 45:
+            time.sleep(2)
+            i+=1
+            pc_val=get_percent(load.text)
+            print('Iter:',i,end=' ')
+            print('load:',pc_val, end='\r')
+            if pc_val==100:
+                break
+            if pc_val!=pc_val_tmp:
+                i=0
+            pc_val_tmp=pc_val
+        if pc_val==100:
+            print("100% loaded!")
+            break
+    print('Rewind')
+    browser.execute_script( "updateAnimationStatus('paused');")
+    browser.execute_script( "animFirstFrame();")
+    browser.execute_script("updateAnimationStatus('playing');")
+    print('recording...',end=' ')
+    tempfile=ofile.rsplit('/',1)[0]+'/tempfile.mp4'
+    print(tempfile)
+    os.system('ffmpeg  -y -video_size 2560x1440 -framerate 30 -f x11grab -i '+\
+            os.environ['DISPLAY']+'.0+0,0 -c:v libx264 -pix_fmt yuv420p -crf 0 -preset ultrafast '+\
+            tempfile+' &')
+    #time.sleep(60)
+    time.sleep(video_tsize)
+    os.system('pkill ffmpeg')
+    print('Stop animation')
+    print('*'*50)
+    time.sleep(1)
+    stop = browser.find_element_by_class_name('warning')
+    stop.click()
+    browser.quit()
 print('encoding...')
 os.system('ffmpeg -y -i '+tempfile+' -c:v libx264 -pix_fmt yuv420p -vf scale=1920:1080 '+ofile)
-if headless==True:
-    display.stop()
 print('Bye')
 
