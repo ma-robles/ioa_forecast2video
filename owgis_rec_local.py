@@ -72,7 +72,7 @@ with Display(visible=vis, size=(2560,1440), ) as display:
     browser.set_window_size(2560,1440)
     print('fullscreen ON')
     browser.fullscreen_window()
-    for retry in range(3):
+    for retry in range(5):
         try:
             print('opening:',url)
             browser.get(url)
@@ -133,7 +133,7 @@ with Display(visible=vis, size=(2560,1440), ) as display:
         return 100
 
             
-    for retry in range(2):
+    for retry in range(5):
         print("try number:", retry)
         browser.execute_script("updateAnimationStatus('none')")
         time.sleep(1)
